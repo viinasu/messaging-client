@@ -25,3 +25,6 @@ Runs the app in the development mode.<br />
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+### Screenshots
+![screenshot](https://user-images.githubusercontent.com/9300663/66678710-583d5080-ec21-11e9-85dd-1fff11798d56.gif)
