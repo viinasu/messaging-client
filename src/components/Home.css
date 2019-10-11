@@ -1,8 +1,13 @@
+.title {
+    margin: 20px;
+}
+
 .conversation {
     border-bottom: 1px solid #d9dadc;
     margin-bottom: 10px;
     padding-top: 10px;
     padding-bottom: 10px;
+    margin: 20px;
 }
 
 .conversation-rightCol {
@@ -42,4 +47,11 @@
     justify-content: center;
     align-items: center;
     border-radius: 50%;
+}
+
+.input-searchTerm {
+    width: 100%;
+    padding: 8px;
+    font-family: Helvetica;
+    font-size: 16px;
 }

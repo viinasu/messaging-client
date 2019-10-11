@@ -11,7 +11,8 @@ class Home extends Component {
   constructor (props) {
     super(props);
     this.state = {
-      conversations: []
+      conversations: [],
+      searchTerm: ""
     };
   }
 
@@ -25,14 +26,34 @@ class Home extends Component {
     return new Date(b.last_message.created_at) - new Date(a.last_message.created_at);
   };
 
+  filterBySearchTerm = (conversation) => {
+    if(this.state.searchTerm !== "") {
+      return conversation.name.toLowerCase().indexOf(this.state.searchTerm.toLowerCase()) > -1;
+    }
+    return true;
+  };
+
+  updateSearchTerm = (e) => {
+    this.setState({
+      searchTerm: e.target.value
+    });
+  };
+
   render() {
     return (
       <div>
-        <h1>Inbox</h1>
-        {/* TODO: Implement Chat */}
-        {/* TODO: if outgoing, then put a "you" */}
+        <h1 className="title">Inbox</h1>
+        <div>
+          <input
+            className="input-searchTerm"
+            type="text"
+            placeholder="Search for a conversation"
+            value={ this.state.searchTerm }
+            onChange={ this.updateSearchTerm }
+          />
+        </div>
         <div className="conversations">
-          { this.state.conversations.sort(this.sortByCreatedAt).map((conversation) => (
+          { this.state.conversations.filter(this.filterBySearchTerm).sort(this.sortByCreatedAt).map((conversation) => (
             <div className="conversation" key={ conversation.uuid }>
               <Link to={`/messages/${conversation.uuid}`}>
                 <div className="conversation-leftCol">
