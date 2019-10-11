@@ -1,0 +1,45 @@
+.conversation {
+    border-bottom: 1px solid #d9dadc;
+    margin-bottom: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.conversation-rightCol {
+    width: 100%;
+    margin-left: 10px;
+}
+
+.conversation-rightCol-top, .conversation-rightCol-bottom {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.conversation a {
+    text-decoration: none;
+    color: black;
+    display: flex;
+}
+
+.conversation-name {
+    font-weight: bold;
+}
+
+.conversation-photo img {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+}
+
+.conversation-unreadCount {
+    background-color: green;
+    height: 20px;
+    width: 20px;
+    color: white;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+}
