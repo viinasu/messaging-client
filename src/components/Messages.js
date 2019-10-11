@@ -24,7 +24,7 @@ class Messages extends Component {
   };
 
   submitMessageOnEnter = (e) => {
-    if (e.keyCode == 13) {
+    if (e.keyCode === 13) {
       this.setState({
         messages: this.state.messages.concat(
           {
