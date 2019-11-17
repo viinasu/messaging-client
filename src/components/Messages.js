@@ -38,6 +38,20 @@ class Messages extends Component {
     }
   };
 
+  submitMessageOnSend = (e) => {
+    e.preventDefault();
+    this.setState({
+      messages: this.state.messages.concat(
+        {
+          uuid: Math.floor(Math.random() * 100),
+          created_at: new Date(),
+          direction: "outgoing",
+          body: this.state.newMessage
+        }),
+      newMessage: ""
+    });
+  };
+
   render() {
     return (
       <div className="messagesPage">
@@ -62,6 +76,7 @@ class Messages extends Component {
             onChange={ this.updateNewMessage }
             onKeyDown={ this.submitMessageOnEnter }
           />
+          <button onClick={ this.submitMessageOnSend }> Send </button>
         </div>
       </div>
     )

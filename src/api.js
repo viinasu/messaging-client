@@ -12,13 +12,11 @@ export const  getConversations = () => (
 );
 
 export const getMessages = (uuid) => {
-  console.log('uuid', uuid);
   return fetch(messagesApiUrl(uuid))
     .then((response) => (
       response.json()
     ))
     .then((json) => {
-      console.log(json);
       return json.data
     })
 };
