@@ -2,6 +2,8 @@
 This is a client for the platform described in the [messaging architecture](messaging_architecture.md) spec.
 
 Built as a functional, standalone React app that displays a set of conversations, each with a series of messages between two parties. Assumed the person viewing the app is one of the participants in each conversation (no support for multiple users yet).
+
+
 ![screenshot](https://user-images.githubusercontent.com/9300663/66678710-583d5080-ec21-11e9-85dd-1fff11798d56.gif)
 
 Created on Oct 2019.
