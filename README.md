@@ -23,25 +23,12 @@ Created on Oct 2019.
 - Persisting new outgoing messages is not yet supported
 
 ### Tech Stack
-**Frontend:** [Messenger UI](http://hipmunk.github.io/hipproblems/lessenger/) (already provided)
+**Frontend:** React
 
-```
-The Messenger UI is a minimalist browser-based bot UI that is capable of communicating with a bot engine.
-
-The UI is a webapp expects a server implementing its API to be available at localhost:9000 (i.e., your development machine). The server should expose following HTTP route:
-
-POST /chat/messages - a route capable of receiving messages, and optionally replying with a response.
-```
-
-**Backend:** Node
-* uses `body-parser` 
-* uses `multer` middleware for handling `multipart/form-data`
-* handles post requests to `chat/messages`
-* uses CORS
+**Backend:** CRA
 
 **APIs:**
-* The DarkSky Forecast API https://darksky.net/dev/docs/forecast accepts a coordinate point and provides current weather and a forecast.
-* The Google Gecoding API https://developers.google.com/maps/documentation/geocoding/start will help you convert arbitrary strings that describe locations to coordinate points. (hint: the query param `address` doesn't need to be a fully formed address).
+* `https://sec.meet*****.com/api/v1/conversations`
 
 ### To Run:
 ### `yarn install`
