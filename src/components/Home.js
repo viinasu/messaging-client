@@ -18,7 +18,7 @@ class Home extends Component {
 
   componentDidMount() {
     getConversations().then((data) => {
-      this.setState({ conversations: data });
+      this.setState({ conversations: data.sort(this.sortByCreatedAt) });
     });
   }
 
@@ -40,6 +40,7 @@ class Home extends Component {
   };
 
   render() {
+    const { conversations } = this.state;
     return (
       <div>
         <h1 className="title">Inbox</h1>
@@ -53,7 +54,7 @@ class Home extends Component {
           />
         </div>
         <div className="conversations">
-          { this.state.conversations.filter(this.filterBySearchTerm).sort(this.sortByCreatedAt).map((conversation) => (
+          { conversations.filter(this.filterBySearchTerm).map((conversation) => (
             <div className="conversation" key={ conversation.uuid }>
               <Link to={`/messages/${conversation.uuid}`}>
                 <div className="conversation-leftCol">

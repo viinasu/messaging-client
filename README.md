@@ -57,6 +57,8 @@ It switches between 2 routes. `/messages/:uuid` and `/`, and renders their respe
 * shows the messages and their unread count
 * filters the messages by search term
 * sorts the messages by created at 
+* performance: instead of calling `.sort` in render, we call `.sort` when we set the state. that way, expensive functions like sort are not called on every render.
+* code style: Uses object destructuring
 
 **Messages.js**
 * calls `getMessages` and sets the initial `messages` state
@@ -67,8 +69,6 @@ It switches between 2 routes. `/messages/:uuid` and `/`, and renders their respe
 * fetches the conversations and get messages
 
 ### Improvements
-- fuzzy searching (of conversation names or message contents), persisting new outoging messages, rich-text composing, handling new realtime incoming messages, or anything else you can think of!
-- Minimizing the number of ‘divs’
-- Use object destructuring 
-- performance: do not sort on every render
+- fuzzy searching (of conversation names or message contents), persisting new outgoing messages, rich-text composing, handling new realtime incoming messages, or anything else you can think of!
+- Minimizing the number of ‘divs’ 
 - UI for Messages page - the input box should stay all the way to the bottom of hte page, without needing to scroll down to see it.

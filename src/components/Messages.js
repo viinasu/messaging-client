@@ -40,23 +40,25 @@ class Messages extends Component {
 
   submitMessageOnSend = (e) => {
     e.preventDefault();
+    const { messages, newMessage } = this.state;
     this.setState({
-      messages: this.state.messages.concat(
+      messages: messages.concat(
         {
           uuid: Math.floor(Math.random() * 100),
           created_at: new Date(),
           direction: "outgoing",
-          body: this.state.newMessage
+          body: newMessage
         }),
       newMessage: ""
     });
   };
 
   render() {
+    const { messages, newMessage } = this.state;
     return (
       <div className="messagesPage">
         <div className="messages">
-          { this.state.messages.map((message) => (
+          { messages.map((message) => (
             <div
               className={ message.direction === "outgoing" ? "message message-out" : "message message-in" }
               key={message.uuid}
@@ -72,7 +74,7 @@ class Messages extends Component {
             className="input-newMessage"
             type="text"
             placeholder="Type a message"
-            value={ this.state.newMessage }
+            value={ newMessage }
             onChange={ this.updateNewMessage }
             onKeyDown={ this.submitMessageOnEnter }
           />
